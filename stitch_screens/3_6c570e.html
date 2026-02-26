@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Add Transaction - Finance App</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#10b77f",
+                        "mint": "#e6f7f1",
+                        "background-light": "#f8fafc",
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "1.75rem",
+                        "3xl": "2rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .soft-shadow {
+                box-shadow: 0 10px 30px -5px rgba(16, 183, 127, 0.3);
+            }
+            .hide-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+            .segmented-control input:checked + label {
+                @apply bg-white text-slate-900 shadow-sm;
+            }
+        }
+    </style>
+<style>
+        body {
+            min-height: 100dvh;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light font-display text-slate-900 antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden pb-10">
+<div class="flex items-center sticky top-0 z-20 px-6 py-4 justify-between bg-background-light/80 backdrop-blur-md">
+<button class="flex size-10 items-center justify-center rounded-full bg-white shadow-sm border border-slate-100 transition-transform active:scale-90">
+<span class="material-symbols-outlined text-slate-600">close</span>
+</button>
+<h2 class="text-base font-bold text-slate-800">Add Transaction</h2>
+<div class="size-10"></div> 
+</div>
+<div class="px-6 space-y-4">
+<div class="bg-mint rounded-3xl p-8 flex flex-col items-center justify-center border border-primary/10">
+<p class="text-primary font-bold text-sm uppercase tracking-widest mb-2">Enter Amount</p>
+<div class="flex items-center">
+<span class="text-primary/60 text-3xl font-bold mr-1">$</span>
+<input autofocus="" class="bg-transparent border-none text-center text-5xl font-bold text-primary focus:ring-0 p-0 w-full max-w-[200px]" type="number" value="0.00"/>
+</div>
+</div>
+<div class="bg-white p-5 rounded-3xl border border-slate-100 shadow-sm">
+<p class="text-slate-400 text-[11px] font-bold uppercase tracking-wider mb-4">Select Category</p>
+<div class="flex gap-4 overflow-x-auto hide-scrollbar pb-2">
+<div class="flex flex-col items-center gap-2 shrink-0">
+<div class="size-14 rounded-full bg-orange-100 flex items-center justify-center border-2 border-orange-50 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-orange-500 text-2xl" style="font-variation-settings: 'FILL' 1">fastfood</span>
+</div>
+<span class="text-[10px] font-bold text-slate-500 uppercase tracking-tight">Food</span>
+</div>
+<div class="flex flex-col items-center gap-2 shrink-0">
+<div class="size-14 rounded-full bg-blue-100 flex items-center justify-center border-2 border-blue-50 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-blue-500 text-2xl" style="font-variation-settings: 'FILL' 1">shopping_bag</span>
+</div>
+<span class="text-[10px] font-bold text-slate-500 uppercase tracking-tight">Shopping</span>
+</div>
+<div class="flex flex-col items-center gap-2 shrink-0">
+<div class="size-14 rounded-full bg-purple-100 flex items-center justify-center border-2 border-purple-50 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-purple-500 text-2xl" style="font-variation-settings: 'FILL' 1">directions_car</span>
+</div>
+<span class="text-[10px] font-bold text-slate-500 uppercase tracking-tight">Travel</span>
+</div>
+<div class="flex flex-col items-center gap-2 shrink-0">
+<div class="size-14 rounded-full bg-pink-100 flex items-center justify-center border-2 border-pink-50 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-pink-500 text-2xl" style="font-variation-settings: 'FILL' 1">movie</span>
+</div>
+<span class="text-[10px] font-bold text-slate-500 uppercase tracking-tight">Fun</span>
+</div>
+<div class="flex flex-col items-center gap-2 shrink-0">
+<div class="size-14 rounded-full bg-slate-100 flex items-center justify-center border-2 border-slate-50 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-slate-500 text-2xl">more_horiz</span>
+</div>
+<span class="text-[10px] font-bold text-slate-500 uppercase tracking-tight">Other</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white p-5 rounded-3xl border border-slate-100 shadow-sm flex flex-col gap-3">
+<p class="text-slate-400 text-[11px] font-bold uppercase tracking-wider">Date</p>
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-600">
+<span class="material-symbols-outlined text-xl">calendar_today</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-800 leading-none">Today</p>
+<p class="text-[10px] text-slate-400 mt-1">Dec 14</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-5 rounded-3xl border border-slate-100 shadow-sm flex flex-col gap-3">
+<p class="text-slate-400 text-[11px] font-bold uppercase tracking-wider">Method</p>
+<div class="flex bg-slate-100 p-1 rounded-2xl segmented-control">
+<input checked="" class="hidden" id="upi" name="payment" type="radio"/>
+<label class="flex-1 text-center py-2 rounded-xl text-xs font-bold text-slate-500 cursor-pointer transition-all" for="upi">UPI</label>
+<input class="hidden" id="cash" name="payment" type="radio"/>
+<label class="flex-1 text-center py-2 rounded-xl text-xs font-bold text-slate-500 cursor-pointer transition-all" for="cash">Cash</label>
+</div>
+</div>
+</div>
+<div class="bg-white p-5 rounded-3xl border border-slate-100 shadow-sm">
+<p class="text-slate-400 text-[11px] font-bold uppercase tracking-wider mb-2">Note (Optional)</p>
+<input class="w-full border-none p-0 text-sm font-medium text-slate-800 placeholder-slate-300 focus:ring-0" placeholder="What's this for?" type="text"/>
+</div>
+<div class="pt-4">
+<button class="w-full bg-primary text-white py-5 rounded-3xl text-base font-bold soft-shadow transition-transform active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-xl">check_circle</span>
+                    Save Transaction
+                </button>
+</div>
+</div>
+<div class="mt-auto px-10 py-6">
+<div class="grid grid-cols-3 gap-y-6 text-center">
+<span class="text-xl font-bold text-slate-300">1</span>
+<span class="text-xl font-bold text-slate-300">2</span>
+<span class="text-xl font-bold text-slate-300">3</span>
+<span class="text-xl font-bold text-slate-300">4</span>
+<span class="text-xl font-bold text-slate-300">5</span>
+<span class="text-xl font-bold text-slate-300">6</span>
+<span class="text-xl font-bold text-slate-300">7</span>
+<span class="text-xl font-bold text-slate-300">8</span>
+<span class="text-xl font-bold text-slate-300">9</span>
+<span class="text-xl font-bold text-slate-300">.</span>
+<span class="text-xl font-bold text-slate-300">0</span>
+<span class="material-symbols-outlined text-slate-300 flex justify-center">backspace</span>
+</div>
+</div>
+</div>
+
+</body></html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Spending Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#10b77f",
+                        "accent-blue": "#8daef4",
+                        "background-light": "#f8fafc",
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "1.75rem",
+                        "3xl": "2rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .mesh-gradient-soft {
+                background-color: #ffffff;
+                background-image: 
+                    radial-gradient(at 0% 0%, hsla(161, 84%, 39%, 0.03) 0px, transparent 50%),
+                    radial-gradient(at 100% 100%, hsla(220, 80%, 75%, 0.03) 0px, transparent 50%);
+            }
+            .donut-segment {
+                transition: stroke-dashoffset 0.35s;
+                transform: rotate(-90deg);
+                transform-origin: 50% 50%;
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light font-display text-slate-900 antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden pb-32">
+<div class="flex items-center sticky top-0 z-20 px-6 py-4 justify-between bg-background-light/80 backdrop-blur-md">
+<div class="flex size-10 items-center justify-center rounded-full bg-white shadow-sm border border-slate-100">
+<span class="material-symbols-outlined text-slate-600">chevron_left</span>
+</div>
+<h2 class="text-base font-bold text-slate-800">Spending Analytics</h2>
+<div class="flex size-10 items-center justify-center rounded-full bg-white shadow-sm border border-slate-100">
+<span class="material-symbols-outlined text-slate-600">calendar_month</span>
+</div>
+</div>
+<div class="px-6 space-y-4">
+<div class="bg-white relative overflow-hidden flex flex-col items-center justify-center rounded-3xl shadow-sm border border-slate-100 p-8">
+<div class="relative flex items-center justify-center w-48 h-48">
+<svg class="w-full h-full" viewBox="0 0 100 100">
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#f1f5f9" stroke-width="12"></circle>
+<circle class="donut-segment" cx="50" cy="50" fill="transparent" r="40" stroke="#10b77f" stroke-dasharray="150.7 251.2" stroke-dashoffset="0" stroke-width="12"></circle>
+<circle class="donut-segment" cx="50" cy="50" fill="transparent" r="40" stroke="#8daef4" stroke-dasharray="60.3 251.2" stroke-dashoffset="-150.7" stroke-width="12"></circle>
+<circle class="donut-segment" cx="50" cy="50" fill="transparent" r="40" stroke="#f59e0b" stroke-dasharray="40.2 251.2" stroke-dashoffset="-211" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<p class="text-slate-400 text-xs font-medium">Total Spent</p>
+<p class="text-2xl font-bold text-slate-900">$2,840</p>
+</div>
+</div>
+<div class="mt-6 flex gap-4 text-[10px] font-bold uppercase tracking-wider text-slate-500">
+<div class="flex items-center gap-1.5">
+<span class="size-2 rounded-full bg-primary"></span> Shopping
+                    </div>
+<div class="flex items-center gap-1.5">
+<span class="size-2 rounded-full bg-accent-blue"></span> Food
+                    </div>
+<div class="flex items-center gap-1.5">
+<span class="size-2 rounded-full bg-amber-500"></span> Travel
+                    </div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white p-5 rounded-3xl border border-slate-100 shadow-sm flex flex-col">
+<p class="text-slate-500 text-[11px] font-bold uppercase tracking-wider mb-4">Cash Flow</p>
+<div class="flex items-end justify-between h-16 px-1">
+<div class="flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-4 bg-primary/20 rounded-t-sm h-[60%]"></div>
+<div class="w-4 bg-primary rounded-t-sm h-[100%]"></div>
+</div>
+<div class="flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-4 bg-primary/20 rounded-t-sm h-[50%]"></div>
+<div class="w-4 bg-primary rounded-t-sm h-[80%]"></div>
+</div>
+<div class="flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-4 bg-primary/20 rounded-t-sm h-[70%]"></div>
+<div class="w-4 bg-primary rounded-t-sm h-[90%]"></div>
+</div>
+</div>
+<div class="flex justify-between mt-2 px-1">
+<span class="text-[9px] text-slate-400 font-bold uppercase">Oct</span>
+<span class="text-[9px] text-slate-400 font-bold uppercase">Nov</span>
+<span class="text-[9px] text-slate-400 font-bold uppercase">Dec</span>
+</div>
+</div>
+<div class="bg-white p-5 rounded-3xl border border-slate-100 shadow-sm flex flex-col justify-between">
+<div>
+<p class="text-slate-500 text-[11px] font-bold uppercase tracking-wider mb-1">Top Category</p>
+<p class="text-lg font-bold text-slate-900">Shopping</p>
+</div>
+<div class="mt-2 flex items-center justify-between">
+<div class="size-10 bg-primary/10 rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">shopping_bag</span>
+</div>
+<div class="text-right">
+<p class="text-primary text-xs font-bold">+12%</p>
+<p class="text-[10px] text-slate-400">vs last month</p>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-4 pt-2">
+<h3 class="text-base font-bold text-slate-800">Category Breakdown</h3>
+<div class="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden p-2">
+<div class="space-y-1">
+<div class="p-4 rounded-2xl hover:bg-slate-50 transition-colors">
+<div class="flex justify-between items-center mb-2">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-lg">shopping_bag</span>
+</div>
+<span class="font-bold text-sm text-slate-800">Shopping</span>
+</div>
+<span class="font-bold text-sm text-slate-900">$1,420.00</span>
+</div>
+<div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 60%"></div>
+</div>
+<div class="flex justify-between mt-1.5">
+<span class="text-[10px] text-slate-400 font-medium">60% of budget</span>
+<span class="text-[10px] text-primary font-bold">Good</span>
+</div>
+</div>
+<div class="p-4 rounded-2xl hover:bg-slate-50 transition-colors">
+<div class="flex justify-between items-center mb-2">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-accent-blue/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-accent-blue text-lg">restaurant</span>
+</div>
+<span class="font-bold text-sm text-slate-800">Food &amp; Drinks</span>
+</div>
+<span class="font-bold text-sm text-slate-900">$840.00</span>
+</div>
+<div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+<div class="bg-accent-blue h-full rounded-full" style="width: 30%"></div>
+</div>
+<div class="flex justify-between mt-1.5">
+<span class="text-[10px] text-slate-400 font-medium">30% of budget</span>
+<span class="text-[10px] text-amber-500 font-bold">Warning</span>
+</div>
+</div>
+<div class="p-4 rounded-2xl hover:bg-slate-50 transition-colors">
+<div class="flex justify-between items-center mb-2">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-amber-500/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-amber-500 text-lg">flight</span>
+</div>
+<span class="font-bold text-sm text-slate-800">Travel</span>
+</div>
+<span class="font-bold text-sm text-slate-900">$580.00</span>
+</div>
+<div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+<div class="bg-amber-500 h-full rounded-full" style="width: 20%"></div>
+</div>
+<div class="flex justify-between mt-1.5">
+<span class="text-[10px] text-slate-400 font-medium">20% of budget</span>
+<span class="text-[10px] text-primary font-bold">Good</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed bottom-6 left-6 right-6 z-50">
+<div class="bg-slate-900/95 backdrop-blur-xl rounded-[2.5rem] p-2 flex justify-between items-center shadow-2xl shadow-slate-900/20">
+<a class="flex size-14 items-center justify-center text-slate-400" href="#">
+<span class="material-symbols-outlined text-2xl">home</span>
+</a>
+<a class="flex size-14 items-center justify-center text-white" href="#">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1">bar_chart</span>
+</a>
+<div class="relative">
+<button class="flex size-14 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/20 transition-transform active:scale-90">
+<span class="material-symbols-outlined text-3xl font-light">add</span>
+</button>
+</div>
+<a class="flex size-14 items-center justify-center text-slate-400" href="#">
+<span class="material-symbols-outlined text-2xl">account_balance_wallet</span>
+</a>
+<a class="flex size-14 items-center justify-center text-slate-400" href="#">
+<span class="material-symbols-outlined text-2xl">person</span>
+</a>
+</div>
+</div>
+</div>
+
+</body></html>

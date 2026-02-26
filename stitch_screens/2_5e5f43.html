@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>App Settings - Finance App</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#10b77f",
+                        "accent-blue": "#8daef4",
+                        "background-light": "#f8fafc",
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "1.75rem",
+                        "3xl": "2rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .mesh-gradient {
+                background-color: #ffffff;
+                background-image: 
+                    radial-gradient(at 0% 0%, hsla(161, 84%, 39%, 0.12) 0px, transparent 50%),
+                    radial-gradient(at 100% 0%, hsla(220, 80%, 75%, 0.12) 0px, transparent 50%),
+                    radial-gradient(at 100% 100%, hsla(161, 84%, 39%, 0.08) 0px, transparent 50%),
+                    radial-gradient(at 0% 100%, hsla(220, 80%, 75%, 0.08) 0px, transparent 50%);
+            }
+            .toggle-checkbox:checked + .toggle-label {
+                @apply bg-primary;
+            }
+            .toggle-checkbox:checked + .toggle-label .toggle-dot {
+                @apply translate-x-5;
+            }
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light font-display text-slate-900 antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden pb-32">
+<div class="flex items-center sticky top-0 z-20 px-6 py-4 justify-between bg-background-light/80 backdrop-blur-md">
+<div class="flex size-10 items-center justify-center rounded-full bg-white shadow-sm border border-slate-100">
+<span class="material-symbols-outlined text-slate-600">arrow_back</span>
+</div>
+<h2 class="text-base font-bold text-slate-800">App Settings</h2>
+<div class="flex size-10 items-center justify-center rounded-full bg-white shadow-sm border border-slate-100">
+<span class="material-symbols-outlined text-slate-600">more_horiz</span>
+</div>
+</div>
+<div class="px-6 space-y-4">
+<div class="mesh-gradient relative overflow-hidden flex flex-col items-center justify-center rounded-3xl shadow-sm border border-slate-100 p-8">
+<div class="relative mb-4">
+<div class="size-20 rounded-full bg-white p-1 border border-slate-100 shadow-sm">
+<img alt="Avatar" class="w-full h-full rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKmDUN-FstDOJHd3wPo0yzthSD3I38nNxrVEjdmLGxOAgqmG0zgc1xWQ8yXHlqTlW_OcyxKJ_6B7neoorEF1NTR4UN2mG5IMlAP9K1H2dvzzqsmTPqlmyx7CWouHjOjdzqFJA3R2JhTjNW6_KZ8TLdC-0WwwjtDvmRn8ji0Im1P_pQ7YGWaLMEMnpl-k3-zZcDp9R_ZY7PDqjUWk1kHV4aXNAsxWSB5NVdMxrRwZ4n0x3t8svGDJpc0SY7y07HlhDmxCGEb2W9cagN"/>
+</div>
+<div class="absolute bottom-0 right-0 size-6 bg-primary border-2 border-white rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[14px]">edit</span>
+</div>
+</div>
+<h1 class="text-xl font-bold text-slate-900">Julian Alexander</h1>
+<p class="text-slate-500 text-sm">julian.alex@finance.app</p>
+<div class="mt-4 px-4 py-1.5 bg-white/60 backdrop-blur-sm rounded-full border border-white/40 shadow-sm">
+<span class="text-xs font-bold text-slate-600 uppercase tracking-wider">Premium Member</span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
+<div class="flex items-center gap-3 mb-6">
+<div class="size-10 rounded-2xl bg-slate-50 flex items-center justify-center border border-slate-100">
+<span class="material-symbols-outlined text-slate-600">shield</span>
+</div>
+<h3 class="text-base font-bold text-slate-800">Security</h3>
+</div>
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<div>
+<p class="text-sm font-semibold text-slate-800">Biometric Login</p>
+<p class="text-xs text-slate-400">Use Face ID or Touch ID</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only toggle-checkbox" type="checkbox"/>
+<div class="toggle-label w-11 h-6 bg-slate-200 rounded-full transition-colors duration-200">
+<div class="toggle-dot absolute left-0.5 top-0.5 bg-white w-5 h-5 rounded-full shadow-md transition-transform duration-200"></div>
+</div>
+</label>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<p class="text-sm font-semibold text-slate-800">Two-Factor Auth</p>
+<p class="text-xs text-slate-400">Enhanced account safety</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only toggle-checkbox" type="checkbox"/>
+<div class="toggle-label w-11 h-6 bg-slate-200 rounded-full transition-colors duration-200">
+<div class="toggle-dot absolute left-0.5 top-0.5 bg-white w-5 h-5 rounded-full shadow-md transition-transform duration-200"></div>
+</div>
+</label>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
+<div class="flex items-center gap-3 mb-6">
+<div class="size-10 rounded-2xl bg-slate-50 flex items-center justify-center border border-slate-100">
+<span class="material-symbols-outlined text-slate-600">notifications_active</span>
+</div>
+<h3 class="text-base font-bold text-slate-800">Notifications</h3>
+</div>
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<p class="text-sm font-semibold text-slate-800">Transaction Alerts</p>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only toggle-checkbox" type="checkbox"/>
+<div class="toggle-label w-11 h-6 bg-slate-200 rounded-full transition-colors duration-200">
+<div class="toggle-dot absolute left-0.5 top-0.5 bg-white w-5 h-5 rounded-full shadow-md transition-transform duration-200"></div>
+</div>
+</label>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-sm font-semibold text-slate-800">Weekly Summary</p>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only toggle-checkbox" type="checkbox"/>
+<div class="toggle-label w-11 h-6 bg-slate-200 rounded-full transition-colors duration-200">
+<div class="toggle-dot absolute left-0.5 top-0.5 bg-white w-5 h-5 rounded-full shadow-md transition-transform duration-200"></div>
+</div>
+</label>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
+<div class="flex items-center gap-3 mb-6">
+<div class="size-10 rounded-2xl bg-slate-50 flex items-center justify-center border border-slate-100">
+<span class="material-symbols-outlined text-slate-600">palette</span>
+</div>
+<h3 class="text-base font-bold text-slate-800">App Theme</h3>
+</div>
+<div class="grid grid-cols-3 gap-3">
+<button class="flex flex-col items-center gap-2 p-3 rounded-2xl bg-slate-50 border border-slate-200 border-2">
+<div class="size-6 rounded-full bg-white border border-slate-300"></div>
+<span class="text-[10px] font-bold uppercase tracking-wider text-slate-600">Light</span>
+</button>
+<button class="flex flex-col items-center gap-2 p-3 rounded-2xl bg-slate-900/5 border border-transparent">
+<div class="size-6 rounded-full bg-slate-900 border border-slate-800"></div>
+<span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Dark</span>
+</button>
+<button class="flex flex-col items-center gap-2 p-3 rounded-2xl bg-slate-900/5 border border-transparent">
+<div class="size-6 rounded-full bg-gradient-to-br from-white to-slate-900 border border-slate-300"></div>
+<span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Auto</span>
+</button>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<p class="text-sm font-semibold text-slate-800">High Contrast</p>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only toggle-checkbox" type="checkbox"/>
+<div class="toggle-label w-11 h-6 bg-slate-200 rounded-full transition-colors duration-200">
+<div class="toggle-dot absolute left-0.5 top-0.5 bg-white w-5 h-5 rounded-full shadow-md transition-transform duration-200"></div>
+</div>
+</label>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full py-4 text-red-500 font-bold text-sm bg-red-50 rounded-3xl border border-red-100 mt-2">
+                Log Out
+            </button>
+</div>
+<div class="fixed bottom-6 left-6 right-6 z-50">
+<div class="bg-slate-900/95 backdrop-blur-xl rounded-[2.5rem] p-2 flex justify-between items-center shadow-2xl shadow-slate-900/20">
+<a class="flex size-14 items-center justify-center text-slate-400" href="#">
+<span class="material-symbols-outlined text-2xl">home</span>
+</a>
+<a class="flex size-14 items-center justify-center text-slate-400" href="#">
+<span class="material-symbols-outlined text-2xl">bar_chart</span>
+</a>
+<div class="relative">
+<button class="flex size-14 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/20 transition-transform active:scale-90">
+<span class="material-symbols-outlined text-3xl font-light">add</span>
+</button>
+</div>
+<a class="flex size-14 items-center justify-center text-slate-400" href="#">
+<span class="material-symbols-outlined text-2xl">account_balance_wallet</span>
+</a>
+<a class="flex size-14 items-center justify-center text-white" href="#">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1">person</span>
+</a>
+</div>
+</div>
+</div>
+
+</body></html>

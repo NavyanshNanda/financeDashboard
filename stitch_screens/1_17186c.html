@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Finance Dashboard - Variant 2</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#10b77f",
+                        "accent-blue": "#8daef4",
+                        "background-light": "#f8fafc",
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "1.75rem",
+                        "3xl": "2rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .mesh-gradient {
+                background-color: #ffffff;
+                background-image: 
+                    radial-gradient(at 0% 0%, hsla(161, 84%, 39%, 0.1) 0px, transparent 50%),
+                    radial-gradient(at 100% 0%, hsla(220, 80%, 75%, 0.1) 0px, transparent 50%),
+                    radial-gradient(at 100% 100%, hsla(161, 84%, 39%, 0.05) 0px, transparent 50%),
+                    radial-gradient(at 0% 100%, hsla(220, 80%, 75%, 0.05) 0px, transparent 50%);
+            }
+            .gauge-path {
+                stroke-dasharray: 100, 100;
+                stroke-linecap: round;
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light font-display text-slate-900 antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden pb-32">
+<div class="flex items-center sticky top-0 z-20 px-6 py-4 justify-between bg-background-light/80 backdrop-blur-md">
+<div class="flex size-10 items-center justify-center rounded-full bg-white shadow-sm border border-slate-100">
+<span class="material-symbols-outlined text-slate-600">grid_view</span>
+</div>
+<h2 class="text-base font-bold text-slate-800">Dashboard</h2>
+<div class="flex size-10 items-center justify-center rounded-full bg-white shadow-sm border border-slate-100 relative">
+<span class="material-symbols-outlined text-slate-600">notifications</span>
+<span class="absolute top-2.5 right-2.5 size-2 bg-red-500 rounded-full border-2 border-white"></span>
+</div>
+</div>
+<div class="px-6 space-y-4">
+<div class="mesh-gradient relative overflow-hidden flex flex-col items-center justify-center rounded-3xl shadow-sm border border-slate-100 p-8">
+<p class="text-slate-500 text-sm font-medium mb-1">Total Balance</p>
+<div class="flex items-baseline gap-1">
+<span class="text-slate-400 text-2xl font-semibold">$</span>
+<h1 class="text-4xl font-bold tracking-tight text-slate-900">12,450.80</h1>
+</div>
+<div class="mt-6 flex gap-3 w-full">
+<button class="flex-1 flex items-center justify-center gap-2 bg-slate-900 text-white py-3 rounded-2xl text-sm font-semibold transition-transform active:scale-95">
+<span class="material-symbols-outlined text-lg">arrow_upward</span>
+                        Send
+                    </button>
+<button class="flex-1 flex items-center justify-center gap-2 bg-white text-slate-900 py-3 rounded-2xl text-sm font-semibold border border-slate-100 shadow-sm transition-transform active:scale-95">
+<span class="material-symbols-outlined text-lg">arrow_downward</span>
+                        Receive
+                    </button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white p-5 rounded-3xl border border-slate-100 shadow-sm flex flex-col justify-between">
+<div>
+<p class="text-slate-500 text-[11px] font-bold uppercase tracking-wider mb-3">Spending</p>
+<p class="text-lg font-bold text-slate-900">$3,240</p>
+</div>
+<div class="flex items-end justify-between gap-1 h-12 mt-4">
+<div class="w-2 bg-slate-100 rounded-full h-[40%]"></div>
+<div class="w-2 bg-primary/40 rounded-full h-[70%]"></div>
+<div class="w-2 bg-primary rounded-full h-[100%]"></div>
+<div class="w-2 bg-slate-100 rounded-full h-[50%]"></div>
+<div class="w-2 bg-slate-100 rounded-full h-[65%]"></div>
+</div>
+</div>
+<div class="bg-white p-5 rounded-3xl border border-slate-100 shadow-sm flex flex-col justify-between">
+<div>
+<p class="text-slate-500 text-[11px] font-bold uppercase tracking-wider mb-3">Credit Score</p>
+</div>
+<div class="relative flex flex-col items-center justify-center">
+<svg class="w-full h-16" viewBox="0 0 100 60">
+<path d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke="#f1f5f9" stroke-linecap="round" stroke-width="8"></path>
+<path class="gauge-path" d="M 10 50 A 40 40 0 0 1 75 20" fill="none" stroke="url(#gauge-grad)" stroke-linecap="round" stroke-width="8"></path>
+<defs>
+<linearGradient id="gauge-grad" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#ef4444"></stop>
+<stop offset="50%" stop-color="#f59e0b"></stop>
+<stop offset="100%" stop-color="#10b77f"></stop>
+</linearGradient>
+</defs>
+</svg>
+<div class="absolute bottom-0 text-center">
+<span class="text-lg font-bold text-slate-900 leading-none">740</span>
+<p class="text-[9px] text-primary font-bold">Good</p>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-base font-bold text-slate-800">Transactions</h3>
+<button class="text-xs font-bold text-primary px-3 py-1 bg-primary/10 rounded-full">See All</button>
+</div>
+<div class="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden">
+<div class="divide-y divide-slate-50">
+<div class="flex items-center gap-4 p-4">
+<div class="size-11 flex items-center justify-center rounded-full bg-slate-50 border border-slate-100">
+<span class="material-symbols-outlined text-slate-600 text-xl">shopping_bag</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-sm text-slate-800">Apple Inc</p>
+<p class="text-xs text-slate-400">30 min ago</p>
+</div>
+<p class="font-bold text-sm text-slate-900">-$45.00</p>
+</div>
+<div class="flex items-center gap-4 p-4">
+<div class="size-11 flex items-center justify-center rounded-full bg-slate-50 border border-slate-100">
+<span class="material-symbols-outlined text-slate-600 text-xl">person</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-sm text-slate-800">Jerry Helfer</p>
+<p class="text-xs text-slate-400">12 Dec 2024</p>
+</div>
+<p class="font-bold text-sm text-primary">+$120.00</p>
+</div>
+<div class="flex items-center gap-4 p-4">
+<div class="size-11 flex items-center justify-center rounded-full bg-slate-50 border border-slate-100">
+<span class="material-symbols-outlined text-slate-600 text-xl">sports_basketball</span>
+</div>
+<div class="flex-1">
+<p class="font-bold text-sm text-slate-800">Dribbble</p>
+<p class="text-xs text-slate-400">11 Dec 2024</p>
+</div>
+<p class="font-bold text-sm text-slate-900">-$350.00</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed bottom-6 left-6 right-6 z-50">
+<div class="bg-slate-900/95 backdrop-blur-xl rounded-[2.5rem] p-2 flex justify-between items-center shadow-2xl shadow-slate-900/20">
+<a class="flex size-14 items-center justify-center text-white" href="#">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1">home</span>
+</a>
+<a class="flex size-14 items-center justify-center text-slate-400" href="#">
+<span class="material-symbols-outlined text-2xl">bar_chart</span>
+</a>
+<div class="relative">
+<button class="flex size-14 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/20 transition-transform active:scale-90">
+<span class="material-symbols-outlined text-3xl font-light">add</span>
+</button>
+</div>
+<a class="flex size-14 items-center justify-center text-slate-400" href="#">
+<span class="material-symbols-outlined text-2xl">account_balance_wallet</span>
+</a>
+<a class="flex size-14 items-center justify-center text-slate-400" href="#">
+<span class="material-symbols-outlined text-2xl">person</span>
+</a>
+</div>
+</div>
+</div>
+
+</body></html>
